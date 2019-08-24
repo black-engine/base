@@ -69,11 +69,6 @@ type Traceable struct {
 	Timestamp      time.Time `json:"timestamp,omitempty"`
 }
 
-type BelongsToUser struct {
-	User   User
-	UserId string `gorm:"type:UUID"`
-}
-
 type Wholesaleable struct {
 	IsWholesale bool
 }
