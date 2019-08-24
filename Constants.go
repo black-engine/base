@@ -1,4 +1,4 @@
-package constants
+package base
 
 type Error struct {
 	Message string

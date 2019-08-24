@@ -1,7 +1,6 @@
-package middleware
+package base
 
 import (
-	"github.com/black-engine/base/entities"
 	"github.com/gin-gonic/gin"
 	"github.com/gofrs/uuid"
 	"github.com/jinzhu/gorm"
@@ -14,7 +13,7 @@ func ServerMetrics( db *gorm.DB ) gin.HandlerFunc{
 
 		context.Next()
 
-		request := entities.Request{}
+		request := Request{}
 		request.Path = context.Request.URL.Path
 		request.Method = context.Request.Method
 		request.Status = context.Writer.Status()

@@ -1,4 +1,4 @@
-package entities
+package base
 
 import (
 	"github.com/jinzhu/gorm/dialects/postgres"
