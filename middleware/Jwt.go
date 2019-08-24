@@ -1,6 +1,7 @@
-package base
+package middleware
 
 import (
+	"github.com/black-engine/base/entities"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
 	"github.com/go-http-utils/headers"
@@ -39,7 +40,7 @@ func JwtMiddleware() gin.HandlerFunc {
 		}
 
 		if !validToken {
-			context.JSON(403, InvalidTokenError)
+			context.JSON(403, entities.InvalidTokenError)
 			context.Abort()
 			return
 		}

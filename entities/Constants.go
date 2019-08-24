@@ -1,4 +1,4 @@
-package base
+package entities
 
 type Error struct {
 	Message string
