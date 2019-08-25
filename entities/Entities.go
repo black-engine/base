@@ -37,6 +37,8 @@ type Neighborhood struct {
 	Nameable
 	Location
 
+	Zipcode string
+
 	City   City
 	CityId string `gorm:"type:UUID"`
 }
