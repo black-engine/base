@@ -26,7 +26,9 @@ type City struct {
 	Nameable
 	Location
 
-	ZipCode string
+	ZipCode      string
+	ShippingCost int32
+	ShippingTax  int32
 
 	State   State
 	StateId string `gorm:"type:UUID"`
@@ -38,6 +40,8 @@ type Neighborhood struct {
 	Location
 
 	Zipcode string
+	ShippingCost int32
+	ShippingTax  int32
 
 	City   City
 	CityId string `gorm:"type:UUID"`
@@ -51,7 +55,7 @@ type Branch struct {
 }
 
 type BelongsToBranch struct {
-	Branch *Branch
+	Branch   *Branch
 	BranchId *string `gorm:"type:UUID"`
 }
 
@@ -75,5 +79,5 @@ type BaseImage struct {
 	Position    int8
 	Url         string
 	IsThumbnail bool
-	IsDefault bool
+	IsDefault   bool
 }
