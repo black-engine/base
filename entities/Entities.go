@@ -18,7 +18,7 @@ type State struct {
 	Location
 
 	Country   Country
-	CountryId string `gorm:"type:UUID"`
+	CountryID string `gorm:"type:UUID"`
 }
 
 type City struct {
@@ -30,7 +30,7 @@ type City struct {
 	ShippingTax  int32
 
 	State   State
-	StateId string `gorm:"type:UUID"`
+	StateID string `gorm:"type:UUID"`
 }
 
 type Neighborhood struct {
@@ -43,7 +43,7 @@ type Neighborhood struct {
 	ShippingTax  int32
 
 	City   City
-	CityId string `gorm:"type:UUID"`
+	CityID string `gorm:"type:UUID"`
 }
 
 type Branch struct {
@@ -55,7 +55,7 @@ type Branch struct {
 
 type BelongsToBranch struct {
 	Branch   *Branch
-	BranchId *string `gorm:"type:UUID"`
+	BranchID *string `gorm:"type:UUID"`
 }
 
 type Facet struct {

@@ -13,7 +13,7 @@ type Prospect struct {
 	Traceable
 
 	Campaign   *Campaign
-	CampaignId *string `gorm:"type:UUID"`
+	CampaignID *string `gorm:"type:UUID"`
 }
 
 type FlowEvent struct {
@@ -22,5 +22,5 @@ type FlowEvent struct {
 	Label   string
 
 	Prospect   Prospect
-	ProspectId string `gorm:"type:UUID"`
+	ProspectID string `gorm:"type:UUID"`
 }

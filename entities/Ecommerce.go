@@ -5,5 +5,5 @@ type Category struct {
 	Nameable
 
 	ParentCategory *Category
-	ParentCategoryId *string `gorm:"type:UUID"`
+	ParentCategoryID *string `gorm:"type:UUID"`
 }
