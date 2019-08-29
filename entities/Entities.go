@@ -26,7 +26,6 @@ type City struct {
 	Nameable
 	Location
 
-	ZipCode      string
 	ShippingCost int32
 	ShippingTax  int32
 
