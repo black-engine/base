@@ -74,7 +74,7 @@ type Wholesaleable struct {
 }
 
 type Priceable struct {
-	Value       int32
+	Price       int32
 	Tax         int32
 	Points      int32
 }
