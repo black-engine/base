@@ -32,7 +32,7 @@ type Aliasable struct {
 }
 
 type Enumerable struct {
-	Number int32 `gorm:"AUTO_INCREMENT"`
+	Number int64 `gorm:"AUTO_INCREMENT"`
 }
 
 type Authable struct {
@@ -50,10 +50,10 @@ type Traceable struct {
 	Language       string
 	IsBot          bool
 	BrowserName    string
-	BrowserVersion int
+	BrowserVersion int64
 	Platform       string
 	OsName         string
-	OsVersion      int
+	OsVersion      int64
 	DeviceType     string
 	Region         string
 	City           string
@@ -63,7 +63,7 @@ type Traceable struct {
 	Asn            string
 	Referrer       string
 	ReferrerHost   string
-	Visits         int
+	Visits         int64
 	IsConversion   bool
 	IsNotified     bool
 	Timestamp      time.Time `json:"timestamp,omitempty"`
@@ -74,8 +74,8 @@ type Wholesaleable struct {
 }
 
 type Priceable struct {
-	Price       int32
-	Tax         int32
-	Points      int32
+	Price       int64
+	Tax         int64
+	Points      int64
 }
 

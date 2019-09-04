@@ -26,8 +26,8 @@ type City struct {
 	Nameable
 	Location
 
-	ShippingCost int32
-	ShippingTax  int32
+	ShippingCost int64
+	ShippingTax  int64
 
 	State   State
 	StateID string `gorm:"type:UUID"`
@@ -39,8 +39,8 @@ type Neighborhood struct {
 	Location
 
 	Zipcode string
-	ShippingCost int32
-	ShippingTax  int32
+	ShippingCost int64
+	ShippingTax  int64
 
 	City   City
 	CityID string `gorm:"type:UUID"`
@@ -75,7 +75,7 @@ type Facet struct {
 type BaseImage struct {
 	ExpirableModel
 
-	Position    int8
+	Position    int64
 	Url         string
 	IsThumbnail bool
 	IsDefault   bool
