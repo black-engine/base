@@ -6,7 +6,7 @@ type Request struct {
 	ID string `gorm:"primary_key;type:uuid"`
 	Created time.Time
 	Method string
-	Status int64
+	Status int
 	Path string
 	Latency int64
 }
