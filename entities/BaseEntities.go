@@ -36,7 +36,7 @@ type Enumerable struct {
 }
 
 type Authable struct {
-	Password string `gorm:"type:CHAR(60)";json:"-"`
+	Password string `gorm:"type:CHAR(60)" json:"-"`
 }
 
 type Location struct {
