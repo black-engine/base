@@ -23,6 +23,7 @@ func Prospects( db *gorm.DB ) gin.HandlerFunc{
 		prospect.ID = uuid.Must( uuid.NewV4() ).String()
 		prospect.Created = time.Now()
 		prospect.Updated = prospect.Created
+		prospect.Domain = helpers.GetCookieDomainFromContext( context )
 
 		if c , err := context.Cookie( "c" ); err == nil && len( c ) == 36 {
 			prospect.CampaignID = &c
@@ -52,7 +53,7 @@ func Prospects( db *gorm.DB ) gin.HandlerFunc{
 			prospect.Language = prospect.Language[0:5]
 		}
 
-		context.SetCookie( "p" , prospect.ID , 30*24*60*60 , "/" , helpers.GetCookieDomainFromContext( context ) , false , false )
+		context.SetCookie( "p" , prospect.ID , 30*24*60*60 , "/" , prospect.Domain , false , false )
 		context.Set( "p" , prospect.ID )
 
 		go func(){

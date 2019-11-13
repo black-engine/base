@@ -66,7 +66,7 @@ func GetCookieDomainFromContext( context *gin.Context ) string {
 	}
 	elements := strings.Split( host , "." )
 	if len( elements ) < 2 {
-		return host
+		return fmt.Sprintf(".%s" , host )
 	}
 	for i:= 2; i <= len( elements ); i++{
 		if len( elements[ len( elements ) - i ] ) > 3 { //if block is longer than 3 chars is not considered a part of tld

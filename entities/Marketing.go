@@ -12,7 +12,7 @@ type Campaign struct {
 type Prospect struct {
 	Model
 	Traceable
-
+	Domain     string
 	Campaign   *Campaign
 	CampaignID *string `gorm:"type:UUID"`
 }
