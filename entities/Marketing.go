@@ -4,6 +4,7 @@ import "time"
 
 type Campaign struct {
 	Model
+	Nameable
 	DestinationUrl string
 	FallbackUrl    string
 }

@@ -50,10 +50,10 @@ type Traceable struct {
 	Language       string
 	IsBot          bool
 	BrowserName    string
-	BrowserVersion int64
+	BrowserVersion int
 	Platform       string
 	OsName         string
-	OsVersion      int64
+	OsVersion      int
 	DeviceType     string
 	Region         string
 	City           string
@@ -63,7 +63,7 @@ type Traceable struct {
 	Asn            string
 	Referrer       string
 	ReferrerHost   string
-	Visits         int64
+	Visits         int
 	IsConversion   bool
 	IsNotified     bool
 	Timestamp      time.Time `json:"timestamp,omitempty"`
