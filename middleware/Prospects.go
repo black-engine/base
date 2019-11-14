@@ -16,6 +16,7 @@ func Prospects( db *gorm.DB ) gin.HandlerFunc{
 	return func(context *gin.Context) {
 		if p , err := context.Cookie( "p" ); err == nil && len( p ) == 36 {
 			context.Set( "p" , p )
+			db.Model( &entities.Prospect{} ).Where( "ID = ?" , p ).UpdateColumn( "visits" , gorm.Expr( "visits + 1" ) )
 			return //it has prospect
 		}
 
