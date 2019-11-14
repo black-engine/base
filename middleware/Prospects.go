@@ -25,7 +25,7 @@ func Prospects( db *gorm.DB ) gin.HandlerFunc{
 		prospect.Updated = prospect.Created
 		prospect.Domain = helpers.GetCookieDomainFromContext( context )
 
-		if c , err := context.Cookie( "c" ); err == nil && len( c ) == 36 {
+		if c , exists := context.GetQuery( "c" ); exists && len( c ) == 36 {
 			prospect.CampaignID = &c
 		}
 
