@@ -46,6 +46,12 @@ func Prospects( db *gorm.DB ) gin.HandlerFunc{
 
 		prospect.Referrer = context.GetHeader( headers.Referer )
 
+		if len( prospect.Referrer ) < 1 {
+			if referer , exists := context.GetQuery( "referer" ); exists && len( referer ) > 0 {
+				prospect.Referrer = referer
+			}
+		}
+
 		if u , e2 := url.Parse( prospect.Referrer ) ; e2 == nil {
 			prospect.ReferrerHost = u.Host
 		}
