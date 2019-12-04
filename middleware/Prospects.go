@@ -44,12 +44,12 @@ func Prospects( db *gorm.DB ) gin.HandlerFunc{
 		prospect.Visits = 1
 		prospect.Timestamp = time.Now()
 
-		prospect.Referrer = context.GetHeader( headers.Referer )
+		if referer , exists := context.GetQuery( "referer" ); exists && len( referer ) > 0 {
+			prospect.Referrer = referer
+		}
 
 		if len( prospect.Referrer ) < 1 {
-			if referer , exists := context.GetQuery( "referer" ); exists && len( referer ) > 0 {
-				prospect.Referrer = referer
-			}
+			prospect.Referrer = context.GetHeader( headers.Referer )
 		}
 
 		if u , e2 := url.Parse( prospect.Referrer ) ; e2 == nil {
